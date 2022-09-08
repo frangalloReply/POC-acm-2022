@@ -4,6 +4,7 @@ metadata:
   labels:
     app: etherpad
   name: etherpad-route
+  namespace: app1-d
 spec:
   tls:
     insecureEdgeTerminationPolicy: Redirect
@@ -12,3 +13,4 @@ spec:
     name: etherpad
   port:
     targetPort: 9001
+  host: etherpad.apps.aws-alpha.aws-poc-clusters.mcatest.org

@@ -1,0 +1,4 @@
+generators:
+  - baseline.yaml
+  - aws.yaml
+  - azure.yaml

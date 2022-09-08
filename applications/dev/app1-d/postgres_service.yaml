@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: postgresql
+  namespace: app1-d
 spec:
   ports:
   - name: postgresql

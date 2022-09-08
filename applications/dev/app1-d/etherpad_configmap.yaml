@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   creationTimestamp: null
+  namespace: app1-d
   name: etherpad-settings
   labels:
     app: etherpad

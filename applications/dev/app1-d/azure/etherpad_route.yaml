@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: etherpad
+  name: etherpad-route
+  namespace: app1-d
+spec:
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    name: etherpad
+  port:
+    targetPort: 9001
+  host: etherpad.apps.azure-alpha.azure-poc-clusters.mcatest.org
