@@ -1,14 +1,14 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
-  name: generator-ocp-oauth
+  name: setup-htpasswd-user
 policyDefaults:
   namespace: acm-policies
   remediationAction: enforce
   placement:
     clusterSelectors:
-      site: a
+      site: "a"
 policies:
-  - name: policy-ocp-oauth
+  - name: setup-htpasswd-user
     manifests:
       - path: default
