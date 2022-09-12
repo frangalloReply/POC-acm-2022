@@ -2,8 +2,8 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
   name: generator-ocp-oauth
-placementBindingDefaults:
-  name: placement-binding-ocp-oauth
+#placementBindingDefaults:
+#  name: placement-binding-ocp-oauth
 policyDefaults:
   namespace: acm-policies
   complianceType: mustonlyhave
