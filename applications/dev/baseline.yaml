@@ -12,6 +12,6 @@ policyDefaults:
   remediationAction: enforce
   severity: medium
 policies:
-  - name: app1
+  - name: app1-default
     manifests:
-      - path: app1
+      - path: app1/default
