@@ -5,7 +5,7 @@ metadata:
 placementBindingDefaults:
   name: placement-rule-binding-infra-baseline
 policyDefaults:
-  namespace: policies
+  namespace: acm-policies
   controls: 
     - PR.DS-1 Data-at-rest
   placement:
