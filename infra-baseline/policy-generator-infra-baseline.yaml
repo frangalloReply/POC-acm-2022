@@ -2,12 +2,12 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
   name: policy-generator-infra-baseline
-placementBindingDefaults:
-  name: placement-rule-infra-baseline
+#placementBindingDefaults:
+#  name: placement-rule-infra-baseline
 policyDefaults:
   namespace: policies
   placement:
-    placementRulePath: placement-rule-infra-baseline.yaml
+    placementRulePath: "./placement-rule-infra-baseline.yaml"
   complianceType: mustonlyhave
   remediationAction: enforce
   severity: medium
