@@ -4,14 +4,27 @@ metadata:
   name: policy-generator-applications-dev
 policyDefaults:
   namespace: app-dev-policies
-  placement:
-    name: placement-rule-applications-dev
-    labelSelectors:
-      environment: dev
-  complianceType: mustonlyhave
   remediationAction: enforce
   severity: medium
 policies:
   - name: app1-default
     manifests:
       - path: app1/default
+    placement:
+      clusterSelectors:
+        environment: dev
+  - name: app1-azure
+    manifests:
+      - path: app1/azure
+    placement:
+      clusterSelectors:
+        environment: dev
+        vendor: Azure
+  - name: app1-aws
+    manifests:
+      - path: app1/aws
+    placement:
+      clusterSelectors:
+        environment: dev
+        vendor: Amazon
+    
