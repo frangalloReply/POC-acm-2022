@@ -1,2 +1,2 @@
 generators:
-  - placement-rule-infra-baseline.yaml
+  - policy-generator-infra-baseline.yaml
