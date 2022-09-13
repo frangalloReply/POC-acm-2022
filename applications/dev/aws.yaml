@@ -8,7 +8,6 @@ policyDefaults:
   severity: medium
   placement:
     name: placement-rule-applications-dev-aws
-policyDefaults:
     clusterSelectors:
       cloud: aws
 policies:
