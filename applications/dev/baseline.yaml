@@ -4,6 +4,8 @@ metadata:
   name: policy-generator-applications-dev
 policyDefaults:
   namespace: app-dev-policies
+  placement:
+    name: placement-rule-applications-dev
     clusterSelectors:
       environment: dev
   complianceType: mustonlyhave
