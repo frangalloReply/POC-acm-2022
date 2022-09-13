@@ -7,7 +7,7 @@ placementBindingDefaults:
 policyDefaults:
   namespace: policies
   placement:
-    placementRulePath: "./placement-rule-infra-baseline.yaml"
+    placementRulePath: placement-rule-infra-baseline.yaml
   complianceType: mustonlyhave
   remediationAction: enforce
   severity: medium
