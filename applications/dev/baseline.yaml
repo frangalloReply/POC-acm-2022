@@ -4,6 +4,9 @@ metadata:
   name: policy-generator-applications-dev
 policyDefaults:
   namespace: app-dev-policies
+    clusterSelectors:
+      environment: dev
+  complianceType: mustonlyhave
   remediationAction: enforce
   severity: medium
 policies:

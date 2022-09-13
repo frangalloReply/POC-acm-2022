@@ -4,12 +4,14 @@ metadata:
   name: policy-generator-applications-dev-aws
 policyDefaults:
   namespace: app-dev-policies
-  remediationAction: enforce
-  severity: medium
   placement:
     name: placement-rule-applications-dev-aws
     clusterSelectors:
       cloud: aws
+      environment: dev
+  complianceType: mustonlyhave
+  remediationAction: enforce
+  severity: medium
 policies:
   - name: app1-aws
     manifests:
