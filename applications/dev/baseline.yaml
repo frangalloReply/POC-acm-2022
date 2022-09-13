@@ -19,12 +19,12 @@ policies:
     placement:
       clusterSelectors:
         environment: dev
-        vendor: Azure
+        cloud: Azure
   - name: app1-aws
     manifests:
       - path: app1/aws
     placement:
       clusterSelectors:
         environment: dev
-        vendor: Amazon
+        cloud: Amazon
     
