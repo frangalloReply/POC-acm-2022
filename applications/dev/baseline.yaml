@@ -2,18 +2,11 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
   name: generator-prod-applications
-placementBindingDefaults:
-  name: placement-binding-dev-applications
 policyDefaults:
-  namespace: acm-policies
-  placement:
-    name: placement-rule-dev-applications
-    clusterSelectors:
-      cluster-network: default
-  complianceType: mustonlyhave
+  namespace: app1-policies
   remediationAction: enforce
   severity: medium
 policies:
-  - name: policy-default-dev
+  - name: app1-d
     manifests:
-      - path: default
+      - path: app1-d

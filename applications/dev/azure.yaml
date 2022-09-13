@@ -1,16 +1,9 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
-  name: generator-dev-azure-applications
-placementBindingDefaults:
-  name: placement-binding-dev-azure-applications
+  name: generator-prod-applications
 policyDefaults:
-  namespace: acm-policies
-  placement:
-    name: placement-rule-dev-azure-applications
-    clusterSelectors:
-      cloud: azure
-  complianceType: mustonlyhave
+  namespace: app1-policies
   remediationAction: enforce
   severity: medium
 policies:
