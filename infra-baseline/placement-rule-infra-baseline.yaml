@@ -9,7 +9,7 @@ spec:
     type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-    - key: vendor
+    - key: local-cluster
       operator: In
       values:
-      - Openshift
+      - true
