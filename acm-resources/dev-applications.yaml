@@ -27,6 +27,7 @@ metadata:
     apps.open-cluster-management.io/git-branch: main
     apps.open-cluster-management.io/git-path: applications/dev
     apps.open-cluster-management.io/reconcile-option: merge
+    apps.open-cluster-management.io/cluster-admin: "true"
   labels:
     app: applications-dev-policies
   name: applications-dev-policies-subscription

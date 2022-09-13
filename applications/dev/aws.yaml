@@ -6,7 +6,7 @@ policyDefaults:
   namespace: app-dev-policies
   placement:
     name: placement-rule-applications-dev-aws
-    clusterSelectors:
+    labelSelectors:
       cloud: Amazon
       environment: dev
   complianceType: mustonlyhave

@@ -6,7 +6,7 @@ policyDefaults:
   namespace: app-dev-policies
   placement:
     name: placement-rule-applications-dev
-    clusterSelectors:
+    labelSelectors:
       environment: dev
   complianceType: mustonlyhave
   remediationAction: enforce

@@ -6,7 +6,7 @@ policyDefaults:
   namespace: app-dev-policies
   placement:
     name: placement-rule-applications-dev-azure
-    clusterSelectors:
+    labelSelectors:
       cloud: azure
       environment: dev
   complianceType: mustonlyhave
