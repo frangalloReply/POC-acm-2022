@@ -1,12 +1,17 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
-  name: generator-prod-applications
+  name: policy-generator-applications-dev-aws
 policyDefaults:
-  namespace: app1-policies
+  namespace: app-dev-policies
   remediationAction: enforce
   severity: medium
+  placement:
+    name: placement-rule-applications-dev-aws
+policyDefaults:
+    clusterSelectors:
+      cloud: aws
 policies:
-  - name: app1-d-aws
+  - name: app1-aws
     manifests:
-      - path: app1-d/aws
+      - path: app1/aws

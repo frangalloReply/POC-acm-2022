@@ -1,12 +1,12 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
-  name: generator-prod-applications
+  name: policy-generator-applications-dev
 policyDefaults:
-  namespace: app1-policies
+  namespace: app-dev-policies
   remediationAction: enforce
   severity: medium
 policies:
-  - name: app1-d
+  - name: app1
     manifests:
-      - path: app1-d
+      - path: app1
