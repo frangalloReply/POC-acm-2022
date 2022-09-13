@@ -7,7 +7,7 @@ policyDefaults:
   placement:
     name: placement-rule-applications-dev-aws
     clusterSelectors:
-      cloud: aws
+      cloud: Amazon
       environment: dev
   complianceType: mustonlyhave
   remediationAction: enforce
