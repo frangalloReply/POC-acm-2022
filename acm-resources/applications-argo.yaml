@@ -1,3 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app-argo-dev-policies
+---
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
@@ -48,10 +53,12 @@ metadata:
   name: app-argo-dev-policies-placement
   namespace: app-argo-dev-policies
 spec:
-  clusterReplicas: 1   # Availability choice, maximum number of clusters to provision at once
-  clusterSelector:
-    matchLabels:
-      'environment': 'dev'
   clusterConditions:
-    - type: ManagedClusterConditionAvailable
-      status: "True"
+    - status: "True"
+      type: ManagedClusterConditionAvailable
+  clusterSelector:
+    matchExpressions:
+      - key: local-cluster
+        operator: In
+        values:
+          - "true"
