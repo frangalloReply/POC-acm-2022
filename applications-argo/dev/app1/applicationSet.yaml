@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: pacman-sample
+  namespace: openshift-gitops
+spec:
+  generators:
+  - list:
+      elements:
+        - server: openshift-gitops
+  template: 
+    metadata:
+      name: 'pacman'
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/jnpacker/application-samples.git
+        targetRevision: main
+        path: pacman
+      destination:
+        server: 'openshift-gitops'
+        namespace: pacman
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: false
+        syncOptions:
+          - CreateNamespace=true

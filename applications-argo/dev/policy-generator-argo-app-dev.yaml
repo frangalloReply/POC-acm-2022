@@ -1,0 +1,12 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: policy-generator-argo-app-dev
+policyDefaults:
+  namespace: argo-app-dev-policies
+  remediationAction: enforce
+  severity: medium
+policies:
+  - name: app1-d
+    manifests:
+      - path: app1
