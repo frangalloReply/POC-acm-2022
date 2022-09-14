@@ -2,8 +2,6 @@ apiVersion: policy.open-cluster-management.io/v1
 kind: PolicyGenerator
 metadata:
   name: policy-generator-argo-app-dev
-#placementBindingDefaults:
-#  name: placement-rule-binding-argo-app-dev
 policyDefaults:
   namespace: app-argo-dev-policies
   remediationAction: enforce
