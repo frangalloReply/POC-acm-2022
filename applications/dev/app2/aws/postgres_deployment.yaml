@@ -16,7 +16,6 @@ spec:
         name: postgresql
     spec:
       containers:
-      - capabilities: {}
         env:
         - name: POSTGRESQL_USER
           valueFrom:
