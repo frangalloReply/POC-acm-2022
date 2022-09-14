@@ -1,0 +1,23 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: policy-generator-argo-app-dev-azure
+placementBindingDefaults:
+  name: placement-rule-argo-app-dev-azure
+policyDefaults:
+  namespace: app-argo-dev-azure-policies
+  remediationAction: enforce
+  severity: medium
+  complianceType: mustonlyhave
+  placement:
+    name: placement-rule-argo-app-dev-azure
+    clusterSelectors:
+      environment: development
+      cloud: Azure
+policies:
+  - name: app1-d
+    manifests:
+      - path: app1/azure
+  - name: app2-d
+    manifests:
+      - path: app2/azure

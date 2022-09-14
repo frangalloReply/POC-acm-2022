@@ -1,4 +1,0 @@
-generators:
-  - baseline.yaml
-commonAnnotations:
-  argocd.argoproj.io/compare-options: IgnoreExtraneous

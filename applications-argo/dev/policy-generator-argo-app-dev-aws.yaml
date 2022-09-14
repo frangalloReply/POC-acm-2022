@@ -1,0 +1,23 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PolicyGenerator
+metadata:
+  name: policy-generator-argo-app-dev-aws
+placementBindingDefaults:
+  name: placement-rule-argo-app-dev-aws
+policyDefaults:
+  namespace: app-argo-dev-aws-policies
+  remediationAction: enforce
+  severity: medium
+  complianceType: mustonlyhave
+  placement:
+    name: placement-rule-argo-app-dev-aws
+    clusterSelectors:
+      environment: development
+      cloud: Amazon
+policies:
+  - name: app1-d
+    manifests:
+      - path: app1/aws
+  - name: app2-d
+    manifests:
+      - path: app2/aws

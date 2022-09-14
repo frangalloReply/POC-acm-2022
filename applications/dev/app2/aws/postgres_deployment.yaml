@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgresql
-  namespace: app1-d
+  namespace: app2-d
 spec:
   replicas: 1
   selector:

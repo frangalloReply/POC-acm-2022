@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app2-d
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: app2-d
+    server: 'https://kubernetes.default.svc'
+  project: app2-d
+  source:
+    path: applications/dev/app2/aws
+    repoURL: 'https://github.com/frangalloReply/POC-acm-2022.git'
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
