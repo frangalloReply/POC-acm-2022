@@ -18,7 +18,6 @@ spec:
         targetRevision: main
         path: pacman
       destination:
-        name: 'in-cluster'
         namespace: pacman
         server: 'https://kubernetes.default.svc'
       syncPolicy:
