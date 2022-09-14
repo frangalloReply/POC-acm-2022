@@ -18,7 +18,7 @@ spec:
         targetRevision: main
         path: pacman
       destination:
-        server: 'in-cluster'
+        name: 'in-cluster'
         namespace: pacman
       syncPolicy:
         automated:
