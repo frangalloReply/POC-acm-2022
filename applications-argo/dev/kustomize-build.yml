@@ -1,0 +1,86 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  name: placement-rule-argo-app-dev
+  namespace: argo-app-dev-policies
+spec:
+  clusterConditions:
+  - status: "True"
+    type: ManagedClusterConditionAvailable
+  clusterSelector:
+    matchExpressions:
+    - key: environment
+      operator: In
+      values:
+      - development
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+  name: binding-app1-d
+  namespace: argo-app-dev-policies
+placementRef:
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+  name: placement-rule-argo-app-dev
+subjects:
+- apiGroup: policy.open-cluster-management.io
+  kind: Policy
+  name: app1-d
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    policy.open-cluster-management.io/categories: CM Configuration Management
+    policy.open-cluster-management.io/controls: CM-2 Baseline Configuration
+    policy.open-cluster-management.io/standards: NIST SP 800-53
+  name: app1-d
+  namespace: argo-app-dev-policies
+spec:
+  disabled: false
+  policy-templates:
+  - objectDefinition:
+      apiVersion: policy.open-cluster-management.io/v1
+      kind: ConfigurationPolicy
+      metadata:
+        name: app1-d
+      spec:
+        object-templates:
+        - complianceType: musthave
+          objectDefinition:
+            apiVersion: argoproj.io/v1alpha1
+            kind: ApplicationSet
+            metadata:
+              name: pacman-sample
+              namespace: openshift-gitops
+            spec:
+              generators:
+              - list:
+                  elements:
+                  - server: openshift-gitops
+              template:
+                metadata:
+                  name: pacman
+                spec:
+                  destination:
+                    namespace: pacman
+                    server: https://kubernetes.default.svc
+                  project: default
+                  source:
+                    path: pacman
+                    repoURL: https://github.com/jnpacker/application-samples.git
+                    targetRevision: main
+                  syncPolicy:
+                    automated:
+                      prune: true
+                      selfHeal: false
+                    syncOptions:
+                    - CreateNamespace=true
+        remediationAction: enforce
+        severity: medium

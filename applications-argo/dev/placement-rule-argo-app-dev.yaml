@@ -2,7 +2,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: placement-rule-argo-app-dev
-  namespace: acm-policies
+  namespace: argo-app-dev-policies
 spec:
   clusterConditions:
   - status: "True"
@@ -12,4 +12,4 @@ spec:
     - key: environment
       operator: In
       values:
-      - "dev"
+      - "development"

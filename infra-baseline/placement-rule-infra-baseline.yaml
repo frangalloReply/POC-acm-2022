@@ -2,7 +2,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: placement-rule-infra-baseline
-  namespace: acm-policies
+  namespace: infra-baseline-policies
 spec:
   clusterConditions:
   - status: "True"
