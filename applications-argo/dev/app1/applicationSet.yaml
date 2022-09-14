@@ -1,19 +1,4 @@
 apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  name: app1-d
-  namespace: openshift-gitops
-spec:
-  clusterResourceWhitelist:
-    - group: '*'
-      kind: '*'
-  destinations:
-    - namespace: '*'
-      server: '*'
-  sourceRepos:
-    - '*'
----
-apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: app1-d-applicationset
