@@ -4,6 +4,9 @@ metadata:
   name: placement-rule-argo-app-dev
   namespace: app-argo-dev-policies
 spec:
+  clusterConditions:
+  - status: "True"
+    type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
     - key: environment

@@ -23,13 +23,13 @@ spec:
     metadata:
       name: app1
     spec:
-      project: app1-d
+      project: "app1-d"
       source:
         repoURL: https://github.com/jnpacker/application-samples.git
         targetRevision: main
         path: pacman
       destination:
-        namespace: app1-d
+        namespace: pacman
         server: 'https://kubernetes.default.svc'
       syncPolicy:
         automated:
