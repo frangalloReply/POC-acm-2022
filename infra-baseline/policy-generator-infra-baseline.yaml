@@ -10,3 +10,6 @@ policies:
   - name: oauth-policy
     manifests:
       - path: oauth
+  - name: gitops-operator-policy
+    manifests:
+      - path: gitops
