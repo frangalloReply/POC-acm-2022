@@ -1,13 +1,8 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: app1-d
----
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: pacman-sample
-  namespace: app1-d
+  namespace: openshift-gitops
 spec:
   template: 
     metadata:
@@ -19,7 +14,7 @@ spec:
         targetRevision: main
         path: pacman
       destination:
-        namespace: pacman
+        namespace: app1-d
         server: 'https://kubernetes.default.svc'
       syncPolicy:
         automated:
