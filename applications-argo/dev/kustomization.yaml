@@ -1,4 +1,2 @@
 generators:
   - policy-generator-argo-app-dev.yaml
-commonAnnotations:
-  argocd.argoproj.io/compare-options: IgnoreExtraneous
