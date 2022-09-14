@@ -1,14 +1,29 @@
 apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: app1-d
+  namespace: openshift-gitops
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  destinations:
+    - namespace: '*'
+      server: '*'
+  sourceRepos:
+    - '*'
+---
+apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: pacman-sample
+  name: app1-d-applicationset
   namespace: openshift-gitops
 spec:
   template: 
     metadata:
-      name: 'pacman'
+      name: app1
     spec:
-      project: "default"
+      project: app1-d
       source:
         repoURL: https://github.com/jnpacker/application-samples.git
         targetRevision: main
