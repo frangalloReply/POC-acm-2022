@@ -5,7 +5,7 @@ metadata:
 placementBindingDefaults:
   name: placement-rule-binding-argo-app-dev
 policyDefaults:
-  namespace: argo-app-dev-policies
+  namespace: app-argo-dev-policies
   remediationAction: enforce
   severity: medium
   placement:

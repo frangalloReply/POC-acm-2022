@@ -2,12 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: pacman-sample
-  namespace: openshift-gitops
+  namespace: app1-d
 spec:
-  generators:
-  - list:
-      elements:
-        - server: openshift-gitops
   template: 
     metadata:
       name: 'pacman'
