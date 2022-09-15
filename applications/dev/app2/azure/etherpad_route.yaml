@@ -4,7 +4,6 @@ metadata:
   labels:
     app: etherpad
   name: etherpad-route
-  namespace: app1-d
 spec:
   tls:
     insecureEdgeTerminationPolicy: Redirect

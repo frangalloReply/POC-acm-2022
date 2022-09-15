@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: app1-d
   labels:
     app: etherpad
   name: etherpad
