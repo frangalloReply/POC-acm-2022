@@ -15,9 +15,9 @@ policyDefaults:
       environment: development
       cloud: Azure
 policies:
-  - name: app1-d
+  - name: app1-azure-d
     manifests:
       - path: app1/azure
-  - name: app2-d
+  - name: app2-azure-d
     manifests:
       - path: app2/azure

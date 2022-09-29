@@ -15,9 +15,9 @@ policyDefaults:
       environment: development
       cloud: Amazon
 policies:
-  - name: app1-d
+  - name: app1-aws-d
     manifests:
       - path: app1/aws
-  - name: app2-d
+  - name: app2-aws-d
     manifests:
       - path: app2/aws

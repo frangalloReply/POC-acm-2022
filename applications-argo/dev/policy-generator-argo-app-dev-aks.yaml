@@ -15,6 +15,6 @@ policyDefaults:
       environment: development
       vendor: AKS
 policies:
-  - name: app1-d
+  - name: app1-aks-d
     manifests:
       - path: app1/aks
