@@ -1,3 +1,4 @@
 generators:
   - policy-generator-argo-app-dev-aws.yaml
   - policy-generator-argo-app-dev-azure.yaml
+  - policy-generator-argo-app-dev-aks.yaml
