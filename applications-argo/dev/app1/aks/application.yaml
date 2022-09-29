@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: app1-d
   source:
-    path: applications/dev/app1/aws/aks
+    path: applications/dev/app1/aks
     repoURL: 'https://github.com/frangalloReply/POC-acm-2022.git'
     targetRevision: HEAD
   syncPolicy:
